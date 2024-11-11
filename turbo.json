@@ -1,0 +1,29 @@
+{
+    "$schema": "https://turbo.build/schema.json",
+    "ui": "tui",
+    "tasks": {
+        "build": {
+            "dependsOn": ["^build"],
+            "inputs": ["$TURBO_DEFAULT$"],
+            "outputs": [".build/dist/**"]
+        },
+        "clean": {
+            "cache": false
+        },
+        "dev": {
+            "cache": false,
+            "persistent": true
+        },
+        "lint:pre": {
+            "dependsOn": []
+        },
+        "lint": {
+            "dependsOn": ["^lint:pre", "^lint"]
+        },
+        "type-check": {
+            "dependsOn": ["^build"],
+            "inputs": ["$TURBO_DEFAULT$"],
+            "outputs": ["*.tsbuildinfo"]
+        }
+    }
+}

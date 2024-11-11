@@ -1,0 +1,42 @@
+{
+    "name": "breached-turbo",
+    "version": "0.1.0",
+    "author": "skyeBreach (https://gitlab.com/skyeBreachBusiness)",
+    "license": "MIT",
+    "private": true,
+    "description": "",
+    "type": "module",
+    "scripts": {
+        "clean:full": "pnpm -r exec git clean -xdf node_modules && git clean -xdf node_modules",
+        "commit": "git-cz",
+        "build": "turbo build --concurrency 1",
+        "dev": "turbo dev",
+        "lint": "turbo lint",
+        "lint:fix": "turbo lint --continue -- --fix",
+        "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+        "type-check": "turbo type-check"
+    },
+    "config": {
+        "commitizen": {
+            "path": "@commitlint/cz-commitlint"
+        }
+    },
+    "devDependencies": {
+        "@breached/config-commitlint": "workspace:^",
+        "@breached/config-eslint": "workspace:^",
+        "@breached/config-typescript": "workspace:^",
+        "@commitlint/cli": "^19.5.0",
+        "@commitlint/cz-commitlint": "^19.5.0",
+        "commitizen": "^4.3.1",
+        "eslint": "^9.13.0",
+        "inquirer": "9",
+        "prettier": "^3.2.5",
+        "rimraf": "^6.0.1",
+        "turbo": "^2.2.3",
+        "typescript": "5.5.4"
+    },
+    "engines": {
+        "node": ">=20.0.0"
+    },
+    "packageManager": "pnpm@8.15.6"
+}
